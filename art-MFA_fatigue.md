@@ -1,10 +1,10 @@
----
+```yaml
 
 title: "How to Stop MFA Fatigue Attacks in 2025"
 description: "MFA is essential, but attackers are abusing it. Learn how to detect, prevent, and defend against MFA fatigue attacks."
 keywords: \[MFA fatigue, multi-factor authentication, identity attacks, brute-force defense, conditional access]
 author: PWNSentinel
--------------------
+```
 
 # How to Stop MFA Fatigue Attacks in 2025
 
