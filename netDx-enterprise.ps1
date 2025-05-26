@@ -1,4 +1,7 @@
+# Author: Pwnsentinel
+# Date: 2025-20-03
 # === Full Enterprise Network Self-Heal with Logging, Email, and Teams Alerts ===
+
 
 $wifiAdapter = "Wi-Fi"
 $hostname = $env:COMPUTERNAME
