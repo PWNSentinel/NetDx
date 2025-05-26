@@ -1,9 +1,10 @@
-# Hybrid and Cloud Network Security & Diagnostics Wiki
+# Hybrid and Cloud Network Security & Diagnostics
 
 In today’s enterprise environments, **network visibility and security diagnostics** are foundational pillars of any hybrid or cloud-first security strategy. With a mix of on-prem, cloud, and mobile endpoints, **defending digital infrastructure** requires unified tools and proactive insights. Microsoft provides a powerful ecosystem for securing and diagnosing network configurations via **PowerShell**, **Microsoft Intune**, **Microsoft Defender for Endpoint**, and **Microsoft Purview**.
 
 ---
-![Applied Zero-Trust](./ztrust.jpeg)
+![Applied Zero-Trust
+](./ztrust.jpeg)
 
 ## 🔒 Importance of Network Security in Hybrid Environments
 
@@ -22,9 +23,9 @@ In today’s enterprise environments, **network visibility and security diagnost
 | ----------------------- | ------------------------------------------------------- | ---------------------------------------------- | --------------------------------------- |
 | `nmcli device status`   | `Get-NetAdapter`                                        | List all network interfaces and their statuses |                                         |
 | —                       | \`Get-NetAdapter                                        | Format-List\`                                  | Optional: Detailed view of each adapter |
-| `nmcli connection show` | `netsh wlan show profiles`                              | Show saved Wi-Fi profiles                      |                                         |
+| `nmcli connection show` | `netsh wla show profiles`                              | Show saved Wi-Fi profiles                      |                                         |
 | —                       | `netsh wlan show profile name="PROFILE_NAME" key=clear` | Show password & config for one profile         |                                         |
-| `iwlist scan`           | `netsh wlan show networks mode=bssid`                   | Show SSIDs, signal strength, auth/encryption   |                                         |
+| `iwlist scan`           | `netsh wlan show networks mode=bssid`                   | Show SSIDs, signal strength, auth/encryption   |                           n              |
 | `ip a`                  | `Get-NetIPAddress`                                      | Display IP address details                     |                                         |
 | —                       | `Get-NetIPConfiguration`                                | View adapter-specific IP and DNS info          |                                         |
 | `ping -c 4 google.com`  | `ping google.com -n 4`                                  | Ping with 4 packets (Windows syntax uses `-n`) |                                         |
@@ -35,7 +36,7 @@ These PowerShell commands enable **real-time diagnostics**, automation scripts, 
 
 ---
 
-## 📦 What You Can Monitor with Microsoft Intune + Defender for Endpoint
+## What You Can Monitor with Microsoft Intune + Defender for Endpoint
 
 Microsoft Intune and Defender for Endpoint form the **core tools** of security diagnostics:
 
@@ -55,7 +56,7 @@ Microsoft Intune and Defender for Endpoint form the **core tools** of security d
 
 ## 🛡 Microsoft 365 Defender Ecosystem & Zero Trust Enforcement
 
-### 🔐 Microsoft Defender Ecosystem
+###  Microsoft Defender Ecosystem
 
 * **Microsoft Defender for Endpoint** provides real-time threat detection, automated response, and vulnerability management.
 * **Microsoft Defender for Cloud** ensures continuous posture management across Azure, AWS, and GCP.
