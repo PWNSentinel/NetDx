@@ -89,7 +89,8 @@ Use automation to trigger alerts or isolate accounts when suspicious patterns em
 ## 📁 GitHub Resource
 
 We’ve published a detection script to help identify patterns in your environment.
-[🔗 Explore the GitHub repo here](https://github.com/PWNSentinel/NetDx.git) *Note: this tool is still being builtout.*
+[🔗 Explore the GitHub repo here](https://github.com/PWNSentinel/NetDx/blob/bayt/netDx-enterprise.ps1) 
+*Note: this tool is still being built out.*
 
 ## ❓FAQs
 
