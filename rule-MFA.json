@@ -1,0 +1,43 @@
+
+{
+    "name": "Detect MFA Fatigue Attacks",
+    "description": "Detects multiple MFA failures (ResultType 500121) followed by a successful login (ResultType 0) within a 5-minute window.",
+    "severity": "Medium",
+    "kind": "Scheduled",
+    "queryFrequency": "PT5M",
+    "queryPeriod": "PT5M",
+    "triggerOperator": "gt",
+    "triggerThreshold": 0,
+    "tactics": [
+        "Persistence",
+        "Privilege Escalation"
+    ],
+    "techniques": [
+        "T1078",
+        "T1110"
+    ],
+    "query": "\nSigninLogs\n| where ResultType == 500121  // MFA denied\n| summarize FailedAttempts = count() by UserPrincipalName, bin(TimeGenerated, 5m)\n| join kind=inner (\n    SigninLogs\n    | where ResultType == 0  // Success\n    | project UserPrincipalName, SuccessTime = TimeGenerated\n) on UserPrincipalName\n| where SuccessTime between (TimeGenerated .. TimeGenerated + 5m)\n",
+    "entityMappings": [
+        {
+            "entityType": "Account",
+            "fieldMappings": [
+                {
+                    "identifier": "FullName",
+                    "columnName": "UserPrincipalName"
+                }
+            ]
+        }
+    ],
+    "suppressionDuration": "PT5M",
+    "suppressionEnabled": false,
+    "enabled": true,
+    "templateVersion": "1.0.0",
+    "displayName": "Detect MFA Fatigue Attacks"
+}
+{
+    "version": "1.0.0",
+    "id": "d3f8b2c4-5e6f-4a7b-9c8d-1e2f3a4b5c6d",
+    "author": "Pwnsentinel.com",
+    "createdDateTime": "2023-10-01T12:00:00Z",
+    "lastModifiedDateTime": "2023-10-01T12:00:00Z"
+}
